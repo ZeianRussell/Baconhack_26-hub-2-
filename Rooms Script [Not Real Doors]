@@ -1,0 +1,65 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({IntroText = "Made By Baconhack_26", Name = "Loaded!", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+task.Wait(3)
+OrionLib:Destroy()
+
+task.Wait(2)
+local repo = 'https://raw.githubusercontent.com/mstudio45/LinoriaLib/main/'
+
+local Library = loadstring(game:HttpGet(repo .. 'Library.lua'))()
+local ThemeManager = loadstring(game:HttpGet(repo .. 'addons/ThemeManager.lua'))()
+local SaveManager = loadstring(game:HttpGet(repo .. 'addons/SaveManager.lua'))()
+
+local Window = Library:CreateWindow({
+    Title = "Bacon V2 | Rooms [Not Real Doors] | _G.LoadVIP = false",
+    Center = true,
+    AutoShow = true,
+    TabPadding = 5.5,
+    MenuFadeTime = 0
+})
+
+local Notification_msg = {
+    A-120W = "A-120 Spawned Hide!",
+    A-60W = "A-60 Spawned Hide!",
+}
+
+local function Moving
+if workspace.A120Moving then
+     A-120W
+    end
+if workspace.A60Moving then
+        A-120W
+    end
+end
+
+local function esp
+    local Esp120 = Instance.new('BoxHandleAdorment', game.Workspace.A120Moving)
+
+    Esp120.Name = [[Esp120]]
+    Esp120.Adornee = "Workspace.A120Moving"
+    Esp120.Size = Vector3.new(2,2,1)
+end
+    local Esp60 = Instance.new('BoxHandleAdorment', game.Workspace.A60Moving)
+
+    Esp60.Name = [[Esp60]]
+    Esp60.Adornee = "Workspace.A60Moving"
+    Esp60.Size = Vector3.new(2,2,1)
+end
+end
+
+local Main_tab = Window:AddTab("Main")
+local Esp_group = Main_tab:AddLeftGroupbox("Esp")
+local Main_group = Main_tab:AddLeftGroupbox("Main")
+
+Esp_group:AddToggle("esp", {
+    Text = "Esp Entity's",
+    Default = false,
+    Tooltip = "Esp Entitys You can See entity's"
+})
+
+bypass_group:AddToggle("Moving", {
+    Text = "Notify Entity",
+    Default = false,
+    Tooltip = "Notify You If Entity Spawns!"
+})
